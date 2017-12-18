@@ -1,0 +1,47 @@
+﻿@model AspMvcWebshop.Models.Category
+
+@{
+    ViewBag.Title = "Browse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section id="main-content" class="clearfix">
+    <h2>Browsing Category : @Model.Name</h2>
+    <hr />
+    <aside id="categories-menu">
+        <h3>CATEGORIES</h3>
+        @{Html.RenderAction("CategoryMenu", "Store");}
+    </aside>
+
+    <div id="listings">
+        @foreach (var product in Model.Products)
+        {        
+        <div class="product">
+            <a href="@Url.Action("Details", "Store", new { id = product.productId })">
+                <img src="content/img/@product.ProductImg" alt="product" class="feature" />
+            </a>
+
+            <h3>@Html.ActionLink(product.Name,
+                "Details", new { id = product.productId })</h3>
+
+           
+
+            
+
+            <p class="wish">
+                <a href="">
+                    <img src="../content/img/wish.gif" alt="Add to Wishlist" />
+                    Add to Wishlist
+                </a>
+            </p>
+        </div>
+        }
+    </div>
+</section>
+
+<hr />
+
+
+
+<hr />

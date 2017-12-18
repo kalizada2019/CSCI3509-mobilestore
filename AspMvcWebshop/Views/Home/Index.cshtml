@@ -1,0 +1,37 @@
+﻿@model List<AspMvcWebshop.Models.Product>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+}
+
+
+
+<section id="main-content">
+    <h2>Featured</h2><hr />
+    <div id="products">
+        @foreach (var product in Model) { 
+        <div class="product">
+            <a href="@Url.Action("Details", "Store",
+                    new { id = product.productId })">
+            <img src="content/img/@product.ProductImg" width="150" height="150" alt="@product.Name" class="feature" /></a>
+            <h3><a href="@Url.Action("Details", "Store",
+                    new { id = product.productId })">@product.Name</a></h3>
+
+            
+            
+
+
+            <p class="wish">
+                <a href="">
+                    <img src="content/img/wish.gif" alt="Add to Wishlist" />
+                    Add to Wishlist
+                </a>
+            </p>
+        </div>
+        }
+
+    </div>
+</section>
+
+<hr />

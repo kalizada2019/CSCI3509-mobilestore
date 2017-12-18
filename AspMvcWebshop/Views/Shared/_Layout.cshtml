@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <link rel="stylesheet" href="~/content/normalize.css">
+    <link rel="stylesheet" href="~/content/main.css">
+    <script src="~/content/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+    
+
+    <div id="wrapper">
+        <header>
+            
+            <section id="action-bar">
+                <div id="logo">
+                    <a href="@Url.Action("Index", "Home")"><span id="logo-accent">Mobile</span>Store</a>
+                </div>
+                <nav class="dropdown">
+                    <ul>
+                        <li>
+                            <a href="#">Category <img src="~/content/img/down-arrow.gif" alt="Category" /></a>
+                            @{Html.RenderAction("CategoryMenu", "Store");}
+                        </li>
+                    </ul>
+                </nav>
+            
+                <div id="search-form">
+                    @using (Html.BeginForm("Search", "Home", FormMethod.Get))
+                    {
+                      @Html.TextBox("searched")<input type="submit" value="Search" class="search submit">
+
+                    }
+               
+                </div>
+                <div id="user-menu">
+                    <nav id="signin" class="dropdown">
+                        @{Html.RenderAction("AdminMenu", "Store");}
+                        @{Html.RenderAction("GuestMenu", "Store");}
+                        @{Html.RenderAction("RegisteredUser", "Store");}
+                    </nav>
+                    @*<nav class="dropdown">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <img src="~/content/img/user-icon.gif" alt="Administrator">
+                                    Administrator <img src="~/content/img/down-arrow.gif" alt="Administrator" />
+                                </a>
+                                <ul>
+                                    <li><a href="#">Order History</a></li>
+                                    <li><a href="#">Wishlist</a></li>
+                                    <li><a href="#">Sign Out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>*@
+                </div>
+                <div style="float :left;">
+                    <img src="~/content/img/blue-cart.gif" alt="View Cart" />
+                    <a href="/ShoppingCart" style=" color :blue;">View Cart</a>
+                </div>
+                
+            <div style="float :left;">
+                <a href="/Home/About" style="float :left; margin-left: 10px; color :blue;">About us</a>
+                </div>
+
+            </section>
+        </header>
+
+        
+    
+        @RenderBody()
+
+        
+
+
+        <footer>
+            <section id="contact">
+                <h3>
+                    For phone orders please call +994504054412. You<br />can also email us at
+                    <a href="mailto:kalizada2019@ada.edu.az">kalizada2019@ada.edu.az</a>
+                </h3>
+            </section>
+
+            <hr />
+
+            
+            <hr />
+
+            
+        </footer>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    
+</body>
+</html>
+
+@RenderSection("scripts", required: false)
+

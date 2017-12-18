@@ -1,0 +1,837 @@
+/*! HTML5 Boilerplate v5.0.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+p, h1, h2, h3, h4, h5, ul, li{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ==========================================================================
+   Wrapper
+   ========================================================================== */
+
+#wrapper{
+    width: 1152px;
+    margin: 0 auto;
+    border-left: 1px solid #aaa;
+    border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+}
+
+
+   
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+header{
+    background-color: #fff;
+}
+
+header a:link, header a:visited{
+    color: #5daad0;
+    text-decoration: none;
+}
+
+/*------top area-----*/
+#top-area{
+    height: 50px;
+    background-color: #f6f6f6;
+    padding: 0 30px;
+    line-height: 50px;
+}
+
+/*------action bar-----*/
+#action-bar{
+    height: 55px;
+    padding: 35px 0 0 30px;
+    vertical-align: middle;
+    position: relative;
+    z-index: 999;
+}
+
+#action-bar a:link, #action-bar a:visited{
+    color: #000;
+}
+
+/*------action bar (logo)-----*/
+#action-bar #logo-accent{
+    color: #5daad0
+}
+
+#action-bar #logo{
+    float: left;
+    margin-right: 100px;
+    font-size: 20px;
+}
+
+/*------action bar (dropdown)-----*/
+
+#action-bar .dropdown{
+    float: left;
+    padding-right: 25px;
+    margin-right: 25px;
+    border-right: 1px dotted #aaa;
+}
+
+#action-bar .dropdown ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#action-bar .dropdown ul li{
+    display: block;
+    position: relative;
+    float: left;
+}
+
+#action-bar .dropdown ul li ul{
+    display: none;
+}
+
+#action-bar .dropdown ul li a{
+    display: block;
+    text-decoration: none;
+    color:  #5daad0;
+    background-color: #fff;
+    margin-left: 1px;
+    white-space: nowrap;
+    padding-left: 10px;
+}
+
+#action-bar .dropdown ul ul li a:link, #action-bar .dropdown ul ul li a:visited{
+    color: #000;
+}
+
+#action-bar .dropdown ul ul li a:hover{
+    color: #aaa;
+}
+
+#action-bar .dropdown li:hover ul{
+    display: block;
+    position: absolute;
+    top: 100%;
+    border: 1px solid #c3c3c3;
+    padding: 5px;
+    width: 160px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #fff;
+}
+
+#action-bar .dropdown li:hover li{
+    float: none;
+    background-color: #fff;
+}
+
+/*------product search form-----*/
+#action-bar #search-form{
+    float: left;
+    padding-right: 25px;
+    margin-right: 10px;
+    border-right: 1px dotted #c3c3c3;
+}
+
+#action-bar #search-form .search{
+    border: 1px solid #eee;
+    padding: 5px 10px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+#action-bar #search-form .submit{
+    background-color: #f6f6f6;
+}
+
+/*------signin styles-----*/
+
+#action-bar #signin li:hover ul{
+    width: 115px;
+}
+
+#action-bar #signin li:hover ul.admin-menu{
+    width: 180px;
+}
+
+#action-bar {
+    float: left;
+}
+
+#action-bar  a:link, #action-bar  a:visited{
+    color: #5daad0;
+}
+
+/* ==========================================================================
+   Promo
+   ========================================================================== */
+
+#promo{
+    height: 400px;
+    padding: 0 30px;
+    background-color: #172832;
+}
+
+#promo-details{
+    float: left;
+}
+
+#promo img{
+    float: right;
+}
+
+#promo h1{
+    color: #fff;
+    font-size: 42px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+#promo p{
+    color: #5daad0;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+/* ==========================================================================
+   Main content
+   ========================================================================== */
+
+
+
+#main-content{
+    padding: 20px 0 0 30px;
+}
+
+#main-content h2, #main-content h3{
+    color: #2e373f;
+    margin-bottom: 20px;
+}
+
+#main-content h3{
+    margin-bottom: 5px;
+}
+
+#main-content h3 a:link, #main-content h3 a:visited{
+    color: #2e373f;
+    text-decoration: none;
+}
+
+#main-content h5{
+    color: #5f5e5e;
+    margin-bottom: 20px;
+}
+
+#main-content p{
+    margin-bottom: 25px;
+}
+
+#main-content hr{
+    margin-bottom: 20px;
+}
+
+/*---- categories-menu ----*/
+
+#categories-menu{
+    width: 180px;
+    border-right: 1px solid #aaa;
+    text-align: left;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+#categories-menu h3{
+    color: #dcdcdc;
+}
+
+#categories-menu ul{
+    margin-left: 20px;
+    list-style-image: url(../content/img/right-arrow.gif);
+}
+
+#categories-menu ul a:link, #categories-menu ul a:visited{
+    color: #5daad0;
+    text-decoration: none;
+}
+
+/*------ listings ------*/
+
+#listings{
+    text-align: left;
+    width: 920px;
+    float: right;
+}
+
+/*------ IE7 margin fix ------*/
+
+.lt-ie8 #listings{
+    margin-top: -110px;
+}
+
+/*------ products ------*/
+
+#products{
+    text-align: center;
+}
+
+.product{
+    text-align: left;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin-right: 70px;
+    width: 200px;
+    vertical-align: top;    
+}
+
+#listings .product{
+    margin-bottom: 30px;
+    margin-right: 100px;
+}
+
+.product .instock{
+    color: #9dbb6f;
+}
+
+.product .outofstock{
+    color: red;
+}
+
+.product img.feature{
+    margin-bottom: 40px;    
+}
+
+.product .wish a:link, .product .wish a:visited {
+    color: #5daad0;
+    text-decoration: none;
+    font-size: 14px;    
+}
+
+/*----pagination----*/
+
+#pagination{
+    height: 50px;
+    line-height: 50px;
+    margin-left: 230px;
+}
+
+#pagination a:link, #pagination a:visited{
+    color: #5daad0;
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   Product Page
+   ========================================================================== */
+
+#product-image, #product-details, #product-info{
+    float: left;
+    margin: 20px 0;
+}
+
+#product-image{
+    width: 45%;
+}
+
+#product-details{
+    width: 30%;
+}
+
+#product-details h1{
+    font-size: 22px;
+    margin-bottom: 40px;
+}
+
+#product-details input{
+    display: block;
+    margin-bottom: 20px;
+    border: 1px solid #aaa;
+    padding: 5px 10px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    width: 40px;
+} 
+
+#product-details button{
+    margin-bottom: 20px;
+}
+
+#product-details a:link, #product-details a:visited{
+    color: #5daad0;
+    text-decoration: none;
+}
+
+#product-info{
+    width: 20%;
+    margin-top: 90px;
+    margin-left: 20px;
+}
+
+#product-info p{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#product-info p span{
+    font-weight: normal;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+footer h4{
+    color: #c3c3c3;
+    margin-bottom: 15px;
+}
+
+/*-----contact-----*/
+
+footer #contact{
+    background-color: #faf9f9;
+    height: 167px;
+    text-align: center;
+}
+
+footer #contact h3{
+    color: #2e373f;
+    padding-top: 50px;
+}
+
+footer #contact a:link, footer #contact a:visited{
+    text-decoration: none;
+    color: #5daad0;   
+}
+
+/*-----links-----*/
+footer #links{
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer #links a:link, footer #links a:visited{
+    color:  #2e373f;
+    text-decoration: none;
+}
+
+footer #links ul{
+    margin-left: 13px;
+    list-style-image: url(../content/img/right-arrow.gif);    
+}
+
+footer #my-account, footer #info, footer #extras{
+    text-align: left;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: top;
+}
+
+footer #my-account, footer #info{
+    margin-right: 130px;
+}
+
+/*-----copyright----*/
+footer #copyright, footer #connect, footer #payments{
+    float: left;    
+}
+
+footer #copyright, footer #connect{
+    margin-right: 130px;
+}
+
+footer #copyright {
+    padding: 20px 30px;    
+}
+
+footer #copyright #store-desc{
+    color: #5f5e5e;
+}
+
+footer #copyright #store-copy{
+    color: #c3c3c3;
+}
+
+footer #logo{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+footer #logo a:link, footer #logo a:visited{
+    color: #2e373f;
+    text-decoration: none;
+}
+
+footer #logo #logo-accent{
+    color: #939393;
+}
+
+footer #connect a:link, footer #connect a:visited{
+    color: #5daad0;
+    text-decoration: none;
+}
+
+footer #connect h4, footer #payments h4{
+    margin-top: 25px;
+}
+
+footer #connect ul{
+    margin-left: 30px;
+}
+
+footer #connect ul li.twitter{
+    list-style-image: url(../content/img/twitter.gif);
+}
+
+footer #connect ul li.fb{
+    list-style-image: url(../content/img/fb.gif);
+}
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.default-btn{
+    background-color: #5daad0;
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 0px 5px 0px #467f9c;
+    text-decoration: none;
+}
+
+.secondary-btn{
+    background-color: #2e373f;
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 0px 5px 0px #22292f;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+
+.secondary-cart-btn{
+    background-color: #5daad0;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 0px 5px 0px #467f9c;
+    border: none;
+    width: 142px;
+}
+
+.secondary-cart-btn a:link, .secondary-cart-btn a:visited{
+    color:#fff !important;
+}
+
+/*IE7 padding fix*/
+.lt-ie8 .default-btn, .lt-ie8 .secondary-btn, lt-ie8 .secondary-cart-btn{
+    display: inline-block;
+}
+
+.cart-btn{
+    padding: 10px 10px 10px 0;
+    background-color: #5daad0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+/*IE7 button padding fix*/
+.lt-ie8 .cart-btn{
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.cart-btn .price{
+    background-color: #2e373f;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-radius-topleft: 5px;
+    -webkit-border-radius-bottomleft: 5px;
+}
+
+.cart-btn:link, .cart-btn:visited{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;   
+}
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers:
+ * http://juicystudio.com/article/screen-readers-display-none.php
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

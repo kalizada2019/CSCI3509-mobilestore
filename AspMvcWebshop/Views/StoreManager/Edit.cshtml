@@ -1,0 +1,88 @@
+﻿@model AspMvcWebshop.Models.Product
+
+@{
+    Layout = null;
+} 
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <script>
+        $('#openUpload').click(function () {
+            $('#imgUpload').trigger('click');
+        });
+    </script>
+    
+    
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        
+        <div class="form-horizontal">
+            <h4>Product</h4>
+            <hr />
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.productId)
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.categoryId, "Category", new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("categoryId", String.Empty)
+                    @Html.ValidationMessageFor(model => model.categoryId)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.brandId, "Brand", new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("brandId", String.Empty)
+                    @Html.ValidationMessageFor(model => model.brandId)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.Price, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Price)
+                    @Html.ValidationMessageFor(model => model.Price)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.ProductImg, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ProductImg, new { type = "file", accept = "image/*", multiple = "multiple"})                    
+                    @Html.ValidationMessageFor(model => model.ProductImg)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>

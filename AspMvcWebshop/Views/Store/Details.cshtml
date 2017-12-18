@@ -1,0 +1,34 @@
+﻿@model AspMvcWebshop.Models.Product
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Product - " + Model.Name;
+}
+<hr />
+<section id="main-content" class="clearfix">
+    <div id="product-image">
+        <img alt="@Model.Name"
+             src="@Model.ProductImg" />
+    </div>
+    <div id="product-details">
+        <h1>Product: @Model.Name</h1>
+
+        <hr />
+        @*<form action="#" method="post" enctype="multipart/form-data">*@
+        <label for="qty">Qty:</label>
+        <input type="text" id="qty" name="qty" disabled value="1" maxlength="2">
+        <p class="secondary-cart-btn button">
+            <img src="~/content/img/white-cart.gif" alt="Add to cart" />
+            @Html.ActionLink("ADD TO CART", "AddToCart",
+                    "ShoppingCart", new { id = Model.productId }, "")
+        </p>
+        @*</form>*@
+        <p>
+            <a href="#"><img src="~/content/img/wish.gif" alt="Add to Wishlist"> Add to Wishlist</a>
+        </p>
+    </div>
+    <div id="product-info">
+        <p class="price">AZN @String.Format("{0:F}", Model.Price)</p>
+        <p>Product Code: <span>@Model.productId</span></p>
+    </div>
+</section>
+<hr />

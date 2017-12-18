@@ -1,0 +1,71 @@
+﻿@model IEnumerable<AspMvcWebshop.Models.Product>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+ 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Name)
+            </td>
+            <td>
+                @Truncate(item.Brand.Name, 25)
+            </td>            
+            <td>
+                @Truncate(item.Name, 25)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.productId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.productId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.productId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
+
+@helper Truncate(string input, int len) 
+{ 
+    if (input.Length <= len)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, len)<text>...</text>
+    }
+}

@@ -1,0 +1,14 @@
+﻿<ul>
+    <li>
+        <a href="#">
+            <img src="~/content/img/user-icon.gif" alt="Admin">
+            @User.Identity.Name <img src="~/content/img/down-arrow.gif" alt="Sign In" />
+        </a>
+        <ul class="admin-menu">
+            <li>@Html.ActionLink("Order History", "", "")</li>
+            <li>@Html.ActionLink("Wishlist", "", "")</li>
+            <li>@Html.ActionLink("Preferences", "Manage", "Account")</li>
+            <li>@Html.ActionLink("Sign Out", "Logout", "Account")</li>
+        </ul>
+    </li>
+</ul>  
